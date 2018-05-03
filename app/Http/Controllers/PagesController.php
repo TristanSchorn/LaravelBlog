@@ -11,10 +11,4 @@ class PagesController extends Controller
         $title = 'Welcome to the sample app';
         return view('pages.index')->with('title', $title);
     }
-    public function about(){
-        return view('pages.about');
-    }
-    public function services(){
-        return view('pages.services');
-    }
 }
