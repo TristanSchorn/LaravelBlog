@@ -23,9 +23,8 @@
                     </ul>
 
                     <ul class="nav navbar-nav">
-                            <li><a href="/">Home</a></li>
                             <li><a href="/posts">Blog</a></li>
-                          </ul>
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
