@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     //
     public function index(){
-        $title = 'Welcome to the sample app';
+        $title = 'Welcome to my sample app';
         return view('pages.index')->with('title', $title);
     }
 }

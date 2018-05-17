@@ -34,6 +34,8 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                         <li><a href="/posts/create" class="btn btn-default">Create Post</a></li>
+                        <li><a href="/messages">Messages @include('messenger.unread-count')</a></li>
+                        <li><a href="/messages/create">Create New Message</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>

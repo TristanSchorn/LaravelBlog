@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
+                {{-- Blog Posts --}}
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -39,6 +40,17 @@
                         @else
                         <p>You have no posts</p>
                     @endif
+                </div>
+
+                {{-- Messages --}}
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <a href="/messages/create" class="btn btn-primary">New Message</a>
+                    <h3>Your Messages</h3>
                 </div>
             </div>
         </div>
