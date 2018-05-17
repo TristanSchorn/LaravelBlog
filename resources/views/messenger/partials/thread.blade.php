@@ -14,4 +14,7 @@
     <p>
         <small><strong>With:</strong> {{ $thread->participantsString(Auth::id()) }}</small>
     </p>
+    
 </div>
+
+<hr>
