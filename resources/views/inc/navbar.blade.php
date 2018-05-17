@@ -23,7 +23,12 @@
                     </ul>
 
                     <ul class="nav navbar-nav">
+                        @guest
                             <li><a href="/posts">Blog</a></li>
+                        @else
+                            <li><a href="/posts">Blog</a></li>
+                            <li><a href="/messages">Messages @include('messenger.unread-count')</a></li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -33,9 +38,8 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                        <li><a href="/posts/create" class="btn btn-default">Create Post</a></li>
-                        <li><a href="/messages">Messages @include('messenger.unread-count')</a></li>
-                        <li><a href="/messages/create">Create New Message</a></li>
+                        <li><a href="/posts/create" width="100%" class="btn btn-default" style="margin-right:16px">&nbsp; &nbsp; New Post &nbsp; &nbsp;</a></li>
+                        <li><a href="/messages/create" width="100%" class="btn btn-default" style="margin-right:16px">New Message</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
