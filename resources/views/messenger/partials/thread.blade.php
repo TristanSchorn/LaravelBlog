@@ -14,6 +14,12 @@
     <p>
         <small><strong>With:</strong> {{ $thread->participantsString(Auth::id()) }}</small>
     </p>
+    <td>
+        {!!Form::open(['action' => ['MessagesController@destroy', $thread->id], 'method' => 'POST', 'class'=> 'pull-right'])!!}
+            {{Form::hidden('_method', 'DELETE')}}
+            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+        {!!Form::close()!!}
+    </td>
     
 </div>
 

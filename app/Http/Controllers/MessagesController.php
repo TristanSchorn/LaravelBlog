@@ -148,4 +148,30 @@ class MessagesController extends Controller
 
         return redirect()->route('messages.show', $id);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        try {
+            $thread = Thread::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Session::flash('error_message', 'The thread with ID: ' . $id . ' was not found.');
+
+            return redirect()->route('messages');
+        }
+
+        $thread->activateAllParticipants();
+
+        // if(auth()->user()->id !=$thread->user_id){
+        //     return redirect('/messages')->with('error', 'Unauthorized page');
+        // }
+
+        $thread->delete();
+        return redirect('/messages')->with('success', 'Thread Deleted');
+    }
 }
