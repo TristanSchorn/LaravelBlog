@@ -49,10 +49,10 @@ class PostsController extends Controller
         ]);
 
         //File upload
-        if($request->hasFile('cover_iamge')){
+        if($request->hasFile('cover_image')){
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request-file('cover_image')->getClientOriginalExtension();
+            $extension = $request-file('cover_image')->getClientOriginallExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         } else {
