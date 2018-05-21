@@ -28,4 +28,4 @@ Route::group(['prefix' => 'messages'], function () {
     Route::post('{id}', ['as' => 'messages.destroy', 'uses' => 'MessagesController@destroy']);
 });
 
-Route::resource('messages', 'MessagesController');
+// Route::resource('messages', 'MessagesController');
