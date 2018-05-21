@@ -58,7 +58,7 @@ class MessagesController extends Controller
 
         $thread->markAsRead($userId);
 
-        if(auth()->user()->id != $thread->user_id){
+        if($userId != $thread->user_id){
             return redirect('/messages')->with('error', 'Unauthorized page');
         }
         return view('messenger.show', compact('thread', 'users'));
